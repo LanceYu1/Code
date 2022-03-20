@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.min.js"></script>
+    <style>
+        div {
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <!-- <script>
+        //原生js语法
+        // 要选中所有的div，为盒子换个颜色
+        var divs = document.querySelectorAll('div');
+        for (var i = 0; i < divs.length; i++) {
+            divs[i].style.backgroundColor = 'red';
+        }
+    </script> -->
+
+    <script>
+        //使用jQuery语法
+        $(function() {
+            //怎么用jQuery语法来设置样式？
+            $("div").css("background", "red");
+            $('div').html('年号');
+        })
+    </script>
+</body>
+
+</html>

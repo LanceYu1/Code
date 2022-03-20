@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/jquery.js"></script>
+    <!-- 1、先引入模板引擎 -->
+    <script src="./lib/template-web.js"></script>
+</head>
+
+<body>
+    <ul>
+        <!-- 
+        <li></li>
+        <li>姓名是：</li>
+        <li>年龄是：</li>
+        <li>是否是vip：</li>
+        <li>注册日期是：</li>
+        <li>爱好是：</li> 
+         -->
+    </ul>
+
+    <script type="text/html" id="tpl">
+        <!-- 3、定义模板 -->
+        <li>{{@title}}</li>
+        <!-- 存放用户信息 -->
+        <li>姓名是：{{name}}</li>
+        <li>年龄是：{{20}}</li>
+        <li>是否是vip：{{isVIP?'是':'不是'}}</li>
+        <li>注册日期是：{{regTime | dateFormat}}</li>
+        <li>爱好是：{{each hobby}}{{$value}}{{','}}{{/each}}</li>
+    </script>
+
+    <script>
+        var data = {
+                title: '<h3>用户信息</h3>',
+                name: 'zs',
+                age: 20,
+                isVIP: true,
+                regTime: new Date(),
+                hobby: ['吃饭', '睡觉', '打豆豆']
+            }
+            //要将上面这个对象的数据渲染到页面对应的结构当中
+            // 2、定义数据：就是上面的这个data对象
+
+        // 6. 定义过滤器
+        template.defaults.imports.dateFormat = function(regTime) {
+            var y = regTime.getFullYear();
+            var m = regTime.getMonth() + 1;
+            var d = regTime.getDate();
+            return y + '-' + m + '-' + d;
+        }
+
+        //4.调用template函数
+        var contain = template('tpl', data);
+        // 5.将模板添加到页面中
+        $('ul').html(contain);
+    </script>
+</body>
+
+</html>

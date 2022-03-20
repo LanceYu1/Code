@@ -1,0 +1,134 @@
+/* 快捷菜单模块的样式 */
+
+.shortcut {
+    height: 52px;
+    background-color: #333333;
+    line-height: 52px;
+}
+
+.wrapper {
+    width: 1240px;
+    margin: 0 auto;
+}
+
+.shortcut li {
+    color: #dcdcdc;
+}
+
+.shortcut a {
+    position: relative;
+    margin: 0 16px;
+    font-size: 14px;
+    color: #dcdcdc;
+}
+
+.shortcut li a span {
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    top: 0;
+    margin-right: 8px;
+    width: 11px;
+    height: 16px;
+    background-image: url(../images/sprites.png);
+    background-position: -160px -70px;
+}
+
+.shortcut li a strong {
+    margin-left: 23px;
+}
+
+.head {
+    height: 130px;
+    /* background-color: pink; */
+    overflow: hidden;
+}
+
+.head .logo {
+    float: left;
+    margin-top: 30px;
+    margin-left: 25px;
+    width: 207px;
+    height: 70px;
+    background-image: url(../images/logo.png);
+    background-size: contain;
+    font-size: 0;
+}
+
+.head .nav {
+    float: left;
+    margin-left: 40px;
+    line-height: 130px;
+}
+
+.head .nav li {
+    float: left;
+    margin-right: 48px;
+}
+
+.head .nav a {
+    font-size: 16px;
+    color: #333333;
+}
+
+.head .nav a:hover {
+    padding-bottom: 7px;
+    color: #27ba9b;
+    border-bottom: 1px solid #27ba9b;
+}
+
+.head .search {
+    position: relative;
+    float: left;
+    margin-top: 54px;
+    margin-left: 34px;
+    width: 172px;
+    height: 30px;
+    background-color: red;
+}
+
+.head .search input {
+    padding-left: 29px;
+    width: 172px;
+    height: 30px;
+    color: #cccccc;
+    font-size: 14px;
+    border-bottom: 2px solid #e7e7e7;
+}
+
+.head .search span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    /* background-color: green; */
+    background-image: url(../images/sprites.png);
+    background-position: -79px -70px;
+}
+
+.car span {
+    position: relative;
+    margin-top: 58px;
+    margin-left: 15px;
+    display: inline-block;
+    width: 27px;
+    height: 25px;
+    /* background-color: green; */
+    background-image: url(../images/sprites.png);
+    background-position: -120px -70px;
+}
+
+.car span i {
+    position: absolute;
+    top: -9px;
+    left: 5px;
+    width: 20px;
+    height: 15px;
+    background-color: #e26237;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 15px;
+    color: #ffffff;
+    font-size: 13px;
+}

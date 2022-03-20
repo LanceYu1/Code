@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 判断一个字符串 'abcoefoxyozzopp' 中出现次数最多的字符，并统计其次数。
+        // 核心算法：利用 charAt(） 遍历这个字符串
+        // 把每个字符都存储给对象， 如果对象没有该属性，就为1，如果存在了就 +1
+        // 遍历对象，得到最大值和该字符 
+
+        var str = 'abcoefoxyozzopp';
+        var obj = {}; //利用字面量来创建对象
+        for (var i = 0; i < str.length; i++) {
+            var ch = str.charAt(i);
+            // 如果obj这个对象中没有ch元素，那就将其加入，并且个数设置为1
+            if (!obj[ch]) {
+                obj[ch] = 1;
+            } else {
+                // obj中有这个元素，那就让他的值加一
+                obj[ch]++;
+            }
+        }
+        var max = 0;
+        for (const k in obj) {
+            if (obj[k] > max) {
+                max = obj[k];
+            }
+        }
+        console.log(max);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // for (var i = 0; i < str.length; i++) {
+        //     var chars = str.charAt(i); //得到字符串当中的每一个字符
+
+        //     //如果obj对象中没有该字符，那就把该字符加入obj对象，如果有，那就把该字符的个数加1
+        //     if (obj[chars]) {
+        //         obj[chars]++;
+        //     } else {
+        //         obj[chars] = 1;
+        //     }
+        // }
+
+        // console.log(obj);
+
+        // var max = 0;
+
+        // for (var key in obj) {
+        //     if (obj[key] > max) {
+        //         max = obj[key];
+        //     }
+        // }
+
+        // console.log(max);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.min.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        $(function() {
+            var li = $('<li></li>');
+            console.log(li);
+            console.log(typeof li); //li是一个对象
+            // 怎么把li加到div中？
+            $('div').html(li); //得出的结论是：虽然语法规定是html('内容')，但li是一个对象，
+            //就不用加引号
+            $('div').append('你好啊');
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 400px;
+            border-bottom: 1px solid #ccc;
+            margin: 100px auto;
+        }
+        
+        .box input {
+            width: 370px;
+            height: 30px;
+            border: 0;
+            outline: none;
+        }
+        
+        .box img {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <label for="">
+            <img src="images/close.png" alt="" id="eye">
+        </label>
+        <input type="password" name="" id="pwd">
+    </div>
+    <script>
+        // 核心思路：  点击眼睛按钮，把密码框类型改为文本框就可以看见里面的密码
+        // 一个按钮两个状态，点击一次，切换为文本框，继续点击一次切换为密码框
+        // 算法：利用一个flag变量，来判断flag的值，如果是1 就切换为文本框，flag 设置为0，如果是0 就切换为密码框，flag设置为1
+
+        //1.获取眼睛和表单元素
+        var eye = document.getElementById('eye');
+        var pwd = document.getElementById('pwd');
+        var flag = 0;
+        //2.为眼睛添加点击时间
+        eye.onclick = function() {
+            if (flag === 0) {
+                //3.修改表单类型为text,并更换图片
+                pwd.type = 'text';
+                eye.src = 'images/open.png';
+                flag = 1;
+            } else {
+                pwd.type = 'password';
+                eye.src = 'images/close.png';
+                flag = 0;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/jquery.js"></script>
+</head>
+
+<body>
+
+    <ul>
+        <li></li>
+        <!-- 存放用户信息 -->
+        <li>姓名是：</li>
+        <li>年龄是：</li>
+        <li>是否是vip：</li>
+        <li>注册日期是：</li>
+        <li>爱好是：</li>
+    </ul>
+
+    <script>
+        var data = {
+                title: '<h3>用户信息</h3>',
+                name: 'zs',
+                age: 20,
+                isVIP: true,
+                regTime: new Date(),
+                hobby: ['吃饭', '睡觉', '打豆豆']
+            }
+            // 要求把这个对象当中的数据渲染出来
+            // 就渲染到ul>li这种结构吧
+
+        // 1、首先获取这些元素$('li').eq(0);
+        // 2、然后将对象中的数据添加到这些元素当中
+        $('li').eq(0).append(data.title);
+        // 你有想过hobby怎么渲染吗？它是一个数组哎
+        // 遍历有三种方式，你挨个试呗
+        // 1、for in不太合适，因为它的参数是属性和对象，而这是一个数组
+        // 2、对象.each
+        // $(data.hobby).each(function(i, domElem) {
+        //     $('li').eq(5).append(domElem + ',');
+        // })
+        // 3.$.each
+        $.each(data.hobby, function(i, elem) {
+            $('li').eq(5).append(elem + ',');
+        })
+
+
+        // 这样一个个渲染的确挺麻烦的，所以用模板引擎来解决
+    </script>
+
+</body>
+
+</html>

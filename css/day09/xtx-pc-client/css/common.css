@@ -1,0 +1,191 @@
+.shortcut {
+    height: 52px;
+    background-color: #333333;
+}
+
+.wrapper {
+    width: 1240px;
+    height: 52px;
+    margin: 0 auto;
+    /* background-color: pink; */
+}
+
+.shortcut ul {
+    float: right;
+}
+
+.shortcut ul li {
+    float: left;
+    width: 90px;
+    line-height: 52px;
+}
+
+.shortcut ul li a {
+    padding: 0 15px;
+    border-right: 1px solid #666666;
+    font-size: 14px;
+    color: #dcdcdc;
+}
+
+.shortcut ul li a span {
+    display: inline-block;
+    width: 11px;
+    height: 16px;
+    background-image: url(../images/sprites.png);
+    background-position: -160px -70px;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+.header {
+    margin: 30px 0;
+    height: 70px;
+    /* background-color: pink; */
+}
+
+.header .logo {
+    float: left;
+    width: 207px;
+    height: 70px;
+    /* background-color: red; */
+    background-image: url(../images/logo.png);
+    background-size: contain;
+    font-size: 0;
+}
+
+.header .nav {
+    float: left;
+    /* background-color: red; */
+}
+
+.header .nav li {
+    float: left;
+    margin-left: 48px;
+    line-height: 70px;
+    font-size: 16px;
+    color: #333333;
+}
+
+.header .nav li a:hover {
+    padding-bottom: 7px;
+    border-bottom: 1px solid #27ba9b;
+    color: #27ba9b;
+}
+
+.search {
+    position: relative;
+    float: left;
+    margin-left: 82px;
+    margin-top: 24px;
+    background-color: red;
+    width: 172px;
+    height: 30px;
+}
+
+.header .search span {
+    position: absolute;
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    background-image: url(../images/sprites.png);
+    background-position: -80px -70px;
+}
+
+.header .search input {
+    padding-left: 31px;
+    width: 172px;
+    height: 30px;
+    border-bottom: 2px solid #e7e7e7;
+}
+
+.header .search input::placeholder {
+    font-size: 14px;
+    color: #cccccc;
+}
+
+.header .car {
+    float: left;
+    margin-left: 15px;
+    margin-top: 24px;
+    /* background-color: red; */
+}
+
+.header .car {
+    position: relative;
+    width: 22px;
+    height: 22px;
+    background-image: url(../images/sprites.png);
+    background-position: -120px -70px;
+}
+
+.header .car span {
+    position: absolute;
+    right: -10px;
+    top: -4px;
+    display: inline-block;
+    width: 20px;
+    height: 15px;
+    background-color: #e26237;
+    border-radius: 8px;
+    line-height: 15px;
+    text-align: center;
+}
+
+.footer {
+    background-color: #333;
+}
+
+.footer .top {
+    margin: 0 auto;
+    padding-left: 130px;
+    padding-top: 60px;
+    width: 1393px;
+    height: 170px;
+    /* background-color: red; */
+    border-bottom: 3px solid #434343;
+}
+
+.footer .top li {
+    float: left;
+    margin-right: 300px;
+    color: #ffffff;
+    font-size: 28px;
+}
+
+
+/* 精灵图的使用 */
+
+.footer .top li span {
+    display: inline-block;
+    width: 58px;
+    height: 58px;
+    background-image: url(../images/sprites.png);
+    vertical-align: middle;
+    margin-right: 19px;
+}
+
+.footer .top ul li:last-child {
+    margin-right: 0;
+}
+
+.footer .top ul li:nth-child(2) span {
+    background-position: -65px 0;
+}
+
+.footer .bottom {
+    text-align: center;
+}
+
+.footer .bottom p {
+    margin-top: 41px;
+    margin-bottom: 17px;
+    /* text-align: center; */
+}
+
+.footer .bottom p a {
+    color: #999999;
+}
+
+.footer .bottom i {
+    color: #999999;
+}

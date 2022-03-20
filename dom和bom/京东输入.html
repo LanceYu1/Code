@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="">
+    <script>
+        // 当我们按下 s 键， 光标就定位到搜索框
+
+        // 2.3获得表单元素
+        var ipt = document.querySelector('input');
+        //1.为表单元素添加按下键盘的事件
+        document.addEventListener("keydown", function(e) {
+            // 2.当我们按下 s 键， 光标就定位到搜索框
+            // 2.1首先要得到s建
+            var key = e.keyCode;
+            // console.log(key);
+            if (key === 83) {
+                // 2.2光标就定位到搜索框
+                ipt.focus()
+            }
+        })
+    </script>
+</body>
+
+</html>

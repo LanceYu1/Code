@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 目标：把旧数组里面不重复的元素选取出来放到新数组中，重复的元素只保留一个，放到新数组中去重。
+        // 核心算法：我们遍历旧数组，然后拿着旧数组元素去查询新数组，如果该元素在新数组里面没有出现过，我们就添加，否则不添加。
+        // 我们怎么知道该元素没有存在？  利用 新数组.indexOf(数组元素)  如果返回时 -1 就说明 新数组里面没有改元素 
+        // 旧数组[‘c’, ‘a’, ‘z’, ‘a’, ‘x’, ‘a’, ‘x’, ‘c’, ‘b’]
+        // 新数组  [ ]
+
+        //1.创建一个新数组
+        var newArr = new Array();
+        //2.遍历旧数组中的每一个元素
+        var beforeArr = ['c', 'a', 'z', 'a', 'x', 'a', 'x', 'c', 'b'];
+        for (var i = 0; i < beforeArr.length; i++) {
+            //3、如果新数组中没有便利过的元素就添加到新数组中，有的话就不执行任何操作
+            if (newArr.indexOf(beforeArr[i]) === -1) {
+                newArr.push(beforeArr[i]);
+            }
+        }
+
+        console.log(newArr);
+    </script>
+</body>
+
+</html>

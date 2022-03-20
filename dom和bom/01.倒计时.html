@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.min.js"></script>
+    <style>
+        .container {
+            display: flex;
+        }
+        
+        .h,
+        .m,
+        .s {
+            width: 250px;
+            height: 250px;
+            line-height: 250px;
+            text-align: center;
+        }
+        
+        .h {
+            background-color: pink;
+        }
+        
+        .s {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="h">1</div>
+        <div class="m">2</div>
+        <div class="s">3</div>
+    </div>
+    <script>
+        // 这个倒计时是不断变化的，因此需要定时器来自动变化（setInterval）
+        // 三个黑色盒子里面分别存放时分秒
+        // 三个黑色盒子利用innerHTML 放入计算的小时分钟秒数 
+        // 第一次执行也是间隔毫秒数，因此刚刷新页面会有空白
+        // 最好采取封装函数的方式， 这样可以先调用一次这个函数，防止刚开始刷新页面有空白问题
+
+        // 思路：时间毫秒值->将时间格式化->放入盒子
+        // 1、首先得到当前时间的时间毫秒值
+        // 5、利用定时器方法不断刷新时间
+        setInterval(function() {
+            var now = +new Date();
+            // 2、将发布时间的时间转化成时间毫秒值的形式
+            var future = +new Date('2022-3-17 21:30:00');
+            // 相减得到时间差
+            var dis = (future - now) / 1000;
+
+
+            // 3、将时间差格式化：用对应算法即可
+            var h = parseInt(dis / 60 / 60 % 24) //   计算小时
+            var m = parseInt(dis / 60 % 60); //   计算分数
+            var s = parseInt(dis % 60); //   计算当前秒数
+
+            // 4、将数据装入盒子
+            $('.h').html(h);
+            $('.m').html(m);
+            $('.s').html(s);
+        }, 1000)
+
+
+
+
+
+
+
+
+
+        // // 1.先得到最新的时间，然后转化成时分秒的形式
+        // // 1.1得到当前时间的时间毫秒值
+        // var now = +new Date();
+        // console.log(now);
+        // //1.2得到计划时间的毫秒值
+        // var plan = +new Date('2022-3-13 20:00:00')
+        // console.log(plan);
+        // //1.3两者之差即为剩余时间
+        // var left = (plan - now) / 1000; //特别关键，得到的是秒才能用下面算法，毫秒不能用下面算法
+        // console.log(left);
+        // //1.4将差值转化为时分秒的形式
+        // var h = parseInt(left / 60 / 60 % 24) //   计算小时
+        // var m = parseInt(left / 60 % 60); //   计算分数
+        // var s = parseInt(left % 60); //   计算当前秒数
+        // console.log(h);
+        // console.log(m);
+        // console.log(s);
+        // // 1.5将差值填入对应盒子当中
+        // $('.h').html(h);
+        // $('.m').html(m);
+        // $('.s').html(s);
+        // //2.让时间动起来
+        // // 也就是说每过一秒就刷新一下，可以把上面的东西封装成一个函数
+        // // setInterval(function(){},1000)
+        // setInterval(countdown, 1000)
+
+        // function countdown() {
+        //     var now = +new Date();
+        //     console.log(now);
+        //     //1.2得到计划时间的毫秒值
+        //     var plan = +new Date('2022-3-13 20:00:00')
+        //     console.log(plan);
+        //     //1.3两者之差即为剩余时间
+        //     var left = (plan - now) / 1000; //特别关键，得到的是秒才能用下面算法，毫秒不能用下面算法
+        //     console.log(left);
+        //     //1.4将差值转化为时分秒的形式
+        //     var h = parseInt(left / 60 / 60 % 24) //   计算小时
+        //     var m = parseInt(left / 60 % 60); //   计算分数
+        //     var s = parseInt(left % 60); //   计算当前秒数
+        //     console.log(h);
+        //     console.log(m);
+        //     console.log(s);
+        //     // 1.5将差值填入对应盒子当中
+        //     $('.h').html(h);
+        //     $('.m').html(m);
+        //     $('.s').html(s);
+        // }
+    </script>
+</body>
+
+</html>

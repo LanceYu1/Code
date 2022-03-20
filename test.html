@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.min.js"></script>
+</head>
+<style>
+    li {
+        width: 200px;
+        background-color: red;
+    }
+</style>
+
+<body>
+    <ul>
+        <li>1111</li>
+    </ul>
+
+    <del>111111111</del>
+
+    <div class="radio">
+        <label>
+            <input type="radio" name="1">
+            a11111111111
+        </label>
+
+        <label>
+            <input type="radio" name="1">
+            a11111111111
+        </label>
+
+
+        <input type="checkbox" name="" id="">
+
+    </div>
+
+    <button id="btn">跳转</button>
+
+    <button id="btn1">前进</button>
+    <button id="btn2">后退</button>
+
+
+    <script>
+        // location.href = 'https://www.bilibili.com'; //不记录浏览历史
+        $('#btn').on('click', function() {
+            location.assign('https://www.bilibili.com');
+        })
+        $('#btn1').on('click', function() {
+            history.forward();
+        })
+        $('#btn2').on('click', function() {
+            history.back();
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.min.js"></script>
+    <style>
+        div {
+            background-color: red;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>3s后跳转</div>
+
+    <script>
+        var time = 3;
+        // 用定时器方法
+        setInterval(function() {
+            if (time == 1) {
+                // 跳转
+                location.href = 'https://www.itcast.cn';
+            } else {
+                time--;
+                $('div').html(time + 's后跳转');
+            }
+        }, 1000)
+    </script>
+</body>
+
+</html>

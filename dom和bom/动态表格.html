@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        
+        td,
+        th {
+            border: 1px solid #333;
+        }
+        
+        thead tr {
+            height: 40px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <table cellspacing="0">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        var datas = [{
+            name: '魏璎珞',
+            subject: 'JavaScript',
+            score: 100
+        }, {
+            name: '弘历',
+            subject: 'JavaScript',
+            score: 98
+        }, {
+            name: '傅恒',
+            subject: 'JavaScript',
+            score: 99
+        }, {
+            name: '明玉',
+            subject: 'JavaScript',
+            score: 88
+        }, {
+            name: '大猪蹄子',
+            subject: 'JavaScript',
+            score: 0
+        }];
+
+        var tbody = document.querySelector('tbody');
+
+        // 1.创建行：行数=获取数组中对象的个数
+        var amount = datas.length // 数组中对象的个数
+            // 1.1创建tr元素
+        for (var i = 0; i < amount; i++) {
+            var tr = document.createElement('tr');
+            // 1.2将创建的行添加到tbody中
+            tbody.appendChild(tr);
+
+            // 2.在每行中加入3个td，获取对象当中属性的值，分别填入td
+            // 2.1怎么获取对象中属性的值呢？通过for in 来得到
+            for (var k in datas[i]) { //k是属性，datas[i][k]得到的是k属性对应的属性值
+                var tmp = datas[i][k]; //得到了属性
+                // console.log(tmp);
+                // console.log('hello');
+
+
+                //2.2 每遍历一个对象就刚好可以得到一个td
+                var td = document.createElement('td');
+                //2.4向td中写入数据
+                td.innerHTML = datas[i][k];
+                //2.3 将td加入到每一行当中去
+                tr.appendChild(td); //因为创建行的循环还在第一次啊，所以可以直接加入
+            }
+            // 3.添加删除操作（因为创建行的循环还在第一次）
+            var td = document.createElement('td');
+            td.innerHTML = '<a href = "script:;" > 删除 </a>';
+            tr.appendChild(td);
+
+            // 4.实现删除的功能
+            // 4.1为a标签添加点击事件
+            var as = document.querySelectorAll('a');
+            as[i].onclick = function() {
+                // console.log('点击了');
+                // 4.2执行删除功能：删除的是a标签父级的父级
+                // 删除语法parent.removeChild(child),parent只要比child大就行，child是tr
+                //child=tr=a.parentNode(td).parentNode
+                tbody.removeChild(this.parentNode.parentNode);
+
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>
